@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Approximation</title>
+    <link rel="stylesheet" href="approx.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Approximation</h1>
+        <textarea name="usrtxt" wrap="hard">Считать</textarea>
+        <br><br>
+        <button onclick="Go()">COUNT</button>
+        <div id="demo"></div>
+
+    
+      <script>
+        var arr = [];
+    
+        function Find(X) {
+          X = X.toLowerCase();
+          if (X === ' ') {
+            return;
+          }
+    
+          for (var j = 0; j < arr.length; j++) {
+            if (arr[j].letters === X) {
+              arr[j].cols = parseInt(arr[j].cols) + 1;
+              return;
+            }
+          }
+    
+          var car = { letters: X, cols: 1 };
+          arr.push(car);
+        }
+    
+        function Go() {
+          var str = document.getElementsByName("usrtxt")[0].value;
+          var ar = str.split("");
+          for (var i = 0; i < ar.length; i++) {
+            Find(ar[i]);
+          }
+          document.getElementById("demo").innerHTML = "";
+          for (var j = 0; j < arr.length; j++) {
+            if (parseInt(arr[j].cols) > 0) {
+              document.getElementById("demo").innerHTML +=
+                "<br><font color='#0033FF'>" +
+                arr[j].letters +
+                "</font>: <font color='#0033FF'>" +
+                arr[j].cols +
+                "</font><br><br>";
+            }
+          }
+        }
+      </script>
+</body>
+</html>

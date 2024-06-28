@@ -1,0 +1,29 @@
+body{
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    background-image: url(rectangle.png);
+    background-position: center top;
+    background-repeat: no-repeat;
+    margin: 0px;
+}
+h1{
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 25px;
+}
+a{
+    text-decoration: none;
+    color: #FFFFFF;
+}
+.box{
+    height: 50px;
+    width: 220px;
+    background-color: #4268fe;
+    font-size: 18px;
+    font-weight: 350;
+    border-radius: 105px;
+    margin: 15px auto;
+    padding-top: 13px;
+    box-sizing: border-box;
+}

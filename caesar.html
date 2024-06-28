@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caesar Cipher</title>
+    <link rel="stylesheet" href="caesar.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="content">
+    <h1>Caesar Cipher</h1>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Caesar_cipher_left_shift_of_3.svg" width="350" alt="Caesar Cipher">
+    <p id="demo"></p>
+    <form>
+      <input type="text" value="abba" id="to_dechiper">
+      <div>
+        <input style="font-size: 13px;
+            font-weight: 450;
+            font-family: 'Montserrat', sans-serif;
+            color: #FFFFFF;
+            height: 38px;
+            width: 126px;
+            background-color: #0033FF;
+            border-style: none;
+            border-radius: 105px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            padding: 0px;" type="button" value="CIPHER" onClick="Go()">
+      </div>
+      <span id="Chiper"></span>
+    </form>
+  </div>
+        <script>
+            function Go() {
+              var result = document.getElementById("to_dechiper").value;
+              document.getElementById("Chiper").innerHTML = ceaserDeCipher(result);
+            }
+        
+            function isLetter(str) {
+              return str.length === 1 && str.match(/[a-z]/i);
+            }
+        
+            function ceaserDeCipher(str) {
+              var encoded = {
+                a: 'd', b: 'e', c: 'f',
+                d: 'g', e: 'h', f: 'i',
+                g: 'j', h: 'k', i: 'l',
+                j: 'm', k: 'n', l: 'o',
+                m: 'p', n: 'q', o: 'r',
+                p: 's', q: 't', r: 'u',
+                s: 'v', t: 'w', u: 'x',
+                v: 'y', w: 'z', x: 'a',
+                y: 'b', z: 'c'
+              };
+              str = str.toLowerCase();
+              var res = "";
+              for (var i = 0; i < str.length; i++) {
+                if (isLetter(str[i]) != null) {
+                  res += encoded[str[i]];
+                } else {
+                  res += str[i];
+                }
+              }
+              return res;
+            }
+        </script>
+</body>
+</html>

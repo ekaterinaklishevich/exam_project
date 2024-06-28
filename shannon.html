@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shannon Entropy</title>
+    <link rel="stylesheet" href="shannon.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Shannon Entropy</h1>
+    <p id="demo"></p>
+    <p><img alt="Forma Diagram" src="forma.jpg" width="270"/></p>
+    <div>
+      <div style="margin-bottom: 15px;">
+        <input name="TextBox1" type="text" value="50" id="TextBox1"/>
+      </div>
+      <div style="margin-bottom: 15px;">
+        <input name="TextBox2" type="text" value="25" id="TextBox2"/>
+      </div>
+      <div style="margin-bottom: 15px;">
+        <input name="TextBox3" type="text" value="12.5" id="TextBox3"/>
+      </div>
+      <div>
+        <input name="TextBox4" type="text" value="12.5" id="TextBox4"/>
+      </div>
+      <div>
+        <input style="font-size: 13px;
+        font-weight: 450;
+        font-family: 'Montserrat', sans-serif;
+        color: #FFFFFF;
+        height: 38px;
+        width: 126px;
+        background-color: #0033FF;
+        border-style: none;
+        border-radius: 105px;
+        margin-top: 20px;
+        margin-bottom: 15px;
+        padding: 0px;" type="button" name="Button1" value="CALCULATE" id="Button1" onclick="Calculate()"/>
+      </div>
+      <span id="Label1"></span>
+    </div>
+
+  <script>
+    function Calculate() {
+      var ev = [];
+      ev[0] = parseFloat(document.getElementById("TextBox1").value);
+      ev[1] = parseFloat(document.getElementById("TextBox2").value);
+      ev[2] = parseFloat(document.getElementById("TextBox3").value);
+      ev[3] = parseFloat(document.getElementById("TextBox4").value);
+      var s = 0;
+      for (var i = 0; i < ev.length; i++) {
+        var p = ev[i] / 100;
+        s += p * Math.log2(1 / p);
+      }
+
+      document.getElementById("Label1").innerHTML = s.toFixed(2);
+    }
+  </script>
+</body>
+</html>

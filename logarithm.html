@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logarithm</title>
+    <link rel="stylesheet" href="logarithm.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <h1>Logarithm calculation</h1>
+  <div>
+    <img src="https://fpga-systems.ru/_pu/1/30961048.gif" alt="" width="200px" height="100px">
+    <br>
+    <p><input id="numberInput" type="text" /></p>
+    <button onclick="calculateLb()">CALCULATE</button>
+    <div id="result">&nbsp;</div>
+  </div>
+  
+  <script>
+    function calculateLb() {
+      var input = document.getElementById("numberInput");
+      var x = parseFloat(input.value);
+      if (!isNaN(x) && x > 0) {
+        var l = Math.log2(x);
+        var result = document.getElementById("result");
+        result.innerHTML = "Log2(" + x + ") = " + l.toFixed(4); 
+      } 
+      else {
+        alert("Please enter a valid positive number.");
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+body{
+    font-family: "Montserrat", sans-serif;
+    background-image: url(rectangle.png);
+    background-position: center top;
+    background-repeat: no-repeat;
+    margin: 0px;
+}
+h1{
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 25px;
+}
+div{
+    border-radius: 10px;
+    background-color: #202020;
+    color: #FFFFFF;
+    width: 600px;
+    margin: 0 auto;
+    padding-top: 30px;
+    padding-bottom: 15px;
+    box-sizing: border-box;
+}
+pre{
+    margin: 0px;
+}
